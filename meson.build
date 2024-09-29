@@ -256,6 +256,11 @@ elif host_machine.system() == 'dripos'
 	rtld_include_dirs += include_directories('sysdeps/dripos/include')
 	libc_include_dirs += include_directories('sysdeps/dripos/include')
 	subdir('sysdeps/dripos')
+elif host_machine.system() == 'vintix'
+        disable_linux_option = true
+        rtld_include_dirs += include_directories('sysdeps/vintix/include')
+        libc_include_dirs += include_directories('sysdeps/vintix/include')
+        subdir('sysdeps/vintix')
 else
 	error('No sysdeps defined for OS: ' + host_machine.system())
 endif
